@@ -1,0 +1,13 @@
+vector_db:
+  vdb_name:"test"
+
+embedding_model:
+  provider: "OpenAI"
+  model_name: "text-embedding-3-large"
+
+llm:
+  provider: "OpenAI"
+  model_name: "gpt-4o"
+
+retriver:
+  top_k: 3
