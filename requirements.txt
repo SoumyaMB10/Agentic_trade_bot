@@ -3,6 +3,9 @@ langchain
 langgraph
 tavily-python
 polygon
+langchain_openai
+python-dotenv
+langchain_community
 
 
 -e .
