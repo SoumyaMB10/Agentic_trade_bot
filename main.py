@@ -25,3 +25,25 @@ async def upload_files(files: List[UploadFile] = File(...)):
         return {"message":"Files successfully processed and stored"}
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
+    
+
+@app.post("/query")
+async def query_chatbot(request: QuestionRequest):
+    try:
+        graph_service = Graphbuilder()
+        graph_service.build()
+        graph = graph_service.get_graph()
+
+        messages = {"message":[request.question]}
+
+        result = graph.invoke({"message":messages})
+
+        if isinstance(result, dict) and 'messages' in result:
+            final_output = result["messages"][-1].content
+        else:
+            final_output = str(result)
+
+        return {"answer": final_output}
+
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"error":str(e)})
