@@ -1,7 +1,7 @@
 agent
+custom_logs
 data_models
 exception
-logs
 prompt_library
 toolkit
 utils

@@ -6,6 +6,10 @@ polygon
 langchain_openai
 python-dotenv
 langchain_community
+langgraph
+streamlit
+fastapi[all]
+uvicorn
 
 
 -e .
